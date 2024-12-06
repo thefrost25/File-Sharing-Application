@@ -1,0 +1,212 @@
+/* Reset and Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000, #222);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  background: #ffffff;
+  width: 700px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  to {
+    text-shadow: 0 0 20px #444, 0 0 30px #000;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+/* Buttons */
+button {
+  width: 180px;
+  height: 50px;
+  background: linear-gradient(135deg, #333, #000);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+  transition: all 0.4s;
+  border-radius: 50%;
+}
+
+button:hover::before {
+  top: 0;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #000, #444);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.copy-btn,
+.qr-btn {
+  margin: 5px;
+  background: linear-gradient(135deg, #333, #000);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover,
+.qr-btn:hover {
+  background: #444;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Table */
+.result-table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.result-table {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result-table thead {
+  background-color: #000;
+}
+
+.result-table th {
+  color: #fff;
+  font-size: 18px;
+  padding: 15px 10px;
+  text-align: left;
+}
+
+.result-table td {
+  padding: 10px;
+  font-size: 16px;
+  color: #000;
+  border-bottom: 1px solid #ccc;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #444;
+}
+
+/* QR Code */
+.qr-code-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.qr-code-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
